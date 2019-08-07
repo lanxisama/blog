@@ -2,8 +2,8 @@
   {
     "userId": 1,
     "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    "title": "这是一个文章的标题",
+    "body": "这是文章的内容\n这个文章我也不知道写的什么\n这个文件只能放在static文件夹中\n这是一个测试文档"
   },
   {
     "userId": 1,
