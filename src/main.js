@@ -26,7 +26,7 @@ Vue.directive('rainbow',{
 
   //v-on:click="click"中的:click 可以通过binding.arg获取
   bind(el,binding,vnode){
-    console.log(binding);
+    // console.log(binding);
     // el.style.color="aqua";
     el.style.color="#"+Math.random().toString(16).slice(2,8);
 }});

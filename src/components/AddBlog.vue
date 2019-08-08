@@ -43,6 +43,7 @@ export default {
     name:'AddBlog',
     data(){
         return {
+            submit:"",
             blog:{
                 title:"",content:"",type:"",author:""
             },
@@ -51,15 +52,24 @@ export default {
     },
     methods:{
         post:function(){
-            var url='https://jsonplaceholder.typicode.com/posts'
-            this.$http.post(url,{
-                userId:this.blog.author,title:this.blog.title,body:this.blog.content
-            }).then((data)=>{console.log(data)});
-            this.submit=true;
-            if(this.submit)
-                alert("提交成功");
-            else
-            {      alert("提交失败");}
+            //发送信息
+            // var url='https://jsonplaceholder.typicode.com/posts'
+            var documentName='/posts.json' //自定义
+            //数据库会自动创建这个文件
+            var dburl='https://blogdb-cee87.firebaseio.com/'+documentName; //firebase数据库
+          
+            this.$http.post(dburl,this.blog).then((data)=>{
+                
+                this.submit=true;
+                        if(this.submit)
+                            alert("提交成功");
+                        else
+                        {      
+                            alert("提交失败");
+                        }
+            });
+   
+
         }
     }
 }
@@ -76,6 +86,14 @@ h2{
 {
     position: relative;
     top:10px;
+     
+}
+#addblog
+{
+    vertical-align: center;
+    margin:0 auto;
+    padding:10px 10px;
+    
 }
 #addblog *{
     box-sizing: border-box;
