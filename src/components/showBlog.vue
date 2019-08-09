@@ -3,7 +3,7 @@
       <h2>博客列表</h2>
       <input type="text" placeholder="Search" v-model="search">
               <div>
-                {{blogs}}
+                <!-- {{blogs}} -->
 
              <p>当前主题:{{theme}}</p>
               <button @click="changeTheme">修改主题</button>

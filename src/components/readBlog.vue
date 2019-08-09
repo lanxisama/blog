@@ -4,7 +4,8 @@
       <em>{{blog.author}}</em> <br>
       <em>分类:{{blog.type}}</em>
       <article><p>{{blog.content}}</p> </article>
-    
+    <button @click="deleteBlog">删除文章</button>
+    <router-link tag="a" v-bind:to="'/edit/'+id">编辑博客</router-link>
     </div>
 </template>
 
@@ -19,6 +20,17 @@ export default {
          blog:{
              
          }
+        }
+    },
+    methods:{
+        deleteBlog()
+        {
+            var documentName='/posts' //自定义
+            //数据库会自动创建这个文件
+            var dburl='https://blogdb-cee87.firebaseio.com/'+documentName; //firebase数据库
+            this.$http.delete(dburl+'/'+this.id+'/'+'.json').then(data=>{
+               this.$router.go(-1);
+            })
         }
     },
     created(){

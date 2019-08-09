@@ -2,6 +2,7 @@ import Add from '../../components/AddBlog'
 import Scan from '../../components/showBlog'
 import HelloWorld from '../../components/HelloWorld'
 import readBlog from '../readBlog.vue'
+import Edit from  '../../components/Edit'
 //routes是一个数组对象
 export const routes=[
     {
@@ -28,5 +29,9 @@ export const routes=[
         path:"/blog/:id",component:readBlog
         // 使用:id传递参数 
         //使用this.$route.params.id,接收
+    },
+    {
+        path:"/edit/:id",
+        component:Edit
     }
 ]
